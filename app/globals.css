@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+:root {
+  /* Glampidol palette — warm, natural, muted */
+  --cream: #f5f0e6;
+  --linen: #efe8da;
+  --sand: #e3dac4;
+  --olive: #5c603b; /* primární brand barva */
+  --olive-deep: #494c2e;
+  --bark: #25281a; /* tmavé sekce, header po scrollu, footer */
+  --amber: #c9914e;
+  --amber-soft: #e3c393; /* sekundární brand barva */
+  --ink: #1c1e1a;
+
+  --background: var(--cream);
+  --foreground: var(--ink);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-cream: var(--cream);
+  --color-linen: var(--linen);
+  --color-sand: var(--sand);
+  --color-olive: var(--olive);
+  --color-olive-deep: var(--olive-deep);
+  --color-bark: var(--bark);
+  --color-amber: var(--amber);
+  --color-amber-soft: var(--amber-soft);
+  --color-ink: var(--ink);
+
+  /* Raleway = nadpisy, logo, navigace · Merriweather Sans = body text */
+  --font-display: var(--font-raleway), "Raleway", ui-sans-serif, system-ui,
+    sans-serif;
+  --font-sans: var(--font-merriweather-sans), "Merriweather Sans",
+    ui-sans-serif, system-ui, sans-serif;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-merriweather-sans), "Merriweather Sans",
+    ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Kotvy sekcí nesmí zajet pod fixní header */
+section[id],
+div[id] {
+  scroll-margin-top: 5rem;
+}
