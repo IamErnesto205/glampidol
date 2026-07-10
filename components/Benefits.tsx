@@ -1,10 +1,12 @@
 import Reveal from "./Reveal";
+import SeasonBackdrop from "./SeasonBackdrop";
 import { BENEFITS } from "@/lib/content";
 
 export default function Benefits() {
   return (
-    <section className="bg-linen">
-      <div className="mx-auto w-full max-w-[1280px] px-6 py-20 lg:px-8 lg:py-28">
+    <section className="relative overflow-hidden bg-linen">
+      <SeasonBackdrop season="jaro" />
+      <div className="relative z-10 mx-auto w-full max-w-[1280px] px-6 py-20 lg:px-8 lg:py-28">
         <div className="grid gap-x-10 gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
           {BENEFITS.map((benefit, index) => (
             <Reveal key={benefit.title} delay={index * 0.1}>

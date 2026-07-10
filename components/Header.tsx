@@ -45,7 +45,7 @@ export default function Header() {
       >
         {/* Logo */}
         <a
-          href="#uvod"
+          href="/#uvod"
           onClick={() => setMenuOpen(false)}
           className="font-display text-xl font-semibold tracking-[0.22em] text-cream uppercase"
         >

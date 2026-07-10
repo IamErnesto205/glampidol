@@ -1,4 +1,7 @@
+import Image from "next/image";
 import { CONTACT, NAV_LINKS, SITE_NAME } from "@/lib/site";
+// Stejná fotka jako v Hero
+import heroImage from "@/public/images/hero.png";
 
 const SOCIALS = [
   { label: "Instagram", href: "#" },
@@ -12,8 +15,21 @@ const LEGAL = [
 
 export default function Footer() {
   return (
-    <footer className="border-t border-cream/10 bg-bark">
-      <div className="mx-auto grid w-full max-w-[1280px] gap-12 px-6 py-16 sm:grid-cols-2 lg:grid-cols-4 lg:px-8 lg:py-20">
+    <footer className="relative overflow-hidden border-t border-cream/10 bg-bark">
+      {/* Fotka na pozadí (stejná jako v Hero) + tmavý překryv pro čitelnost */}
+      <div aria-hidden className="absolute inset-0 z-0">
+        <Image
+          src={heroImage}
+          alt=""
+          fill
+          placeholder="blur"
+          sizes="100vw"
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-bark/85" />
+      </div>
+
+      <div className="relative z-10 mx-auto grid w-full max-w-[1280px] gap-12 px-6 py-16 sm:grid-cols-2 lg:grid-cols-4 lg:px-8 lg:py-20">
         {/* Logo + popis */}
         <div>
           <p className="font-display text-xl font-semibold tracking-[0.22em] text-cream uppercase">
@@ -91,7 +107,7 @@ export default function Footer() {
       </div>
 
       {/* Spodní lišta */}
-      <div className="border-t border-cream/10">
+      <div className="relative z-10 border-t border-cream/10">
         <div className="mx-auto flex w-full max-w-[1280px] flex-col items-start justify-between gap-4 px-6 py-6 sm:flex-row sm:items-center lg:px-8">
           <p className="text-[0.78rem] font-light text-cream/40">
             © {new Date().getFullYear()} {SITE_NAME}. Glamping v trnkovém sadu.

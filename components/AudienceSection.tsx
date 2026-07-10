@@ -1,11 +1,13 @@
 import Eyebrow from "./Eyebrow";
 import Reveal from "./Reveal";
+import SeasonBackdrop from "./SeasonBackdrop";
 import { AUDIENCE } from "@/lib/content";
 
 export default function AudienceSection() {
   return (
-    <section className="bg-linen">
-      <div className="mx-auto w-full max-w-[1280px] px-6 py-24 lg:px-8 lg:py-32">
+    <section className="relative overflow-hidden bg-linen">
+      <SeasonBackdrop season="leto" />
+      <div className="relative z-10 mx-auto w-full max-w-[1280px] px-6 py-24 lg:px-8 lg:py-32">
         <Reveal className="max-w-2xl">
           <Eyebrow>Pro koho</Eyebrow>
           <h2 className="mt-6 font-display text-3xl leading-[1.15] font-semibold tracking-tight text-ink sm:text-4xl">

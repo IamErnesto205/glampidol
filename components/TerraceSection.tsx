@@ -12,7 +12,7 @@ export default function TerraceSection() {
         <Reveal className="order-2 lg:order-1">
           <Eyebrow>Terasa · Gril · Ohniště</Eyebrow>
           <h2 className="mt-6 font-display text-3xl leading-[1.15] font-semibold tracking-tight text-ink sm:text-4xl lg:text-[2.6rem]">
-            Večeře chutná líp, když ji osvítí západní slunce
+            Večeře chutná líp, když ji osvítí zapadající slunce
           </h2>
           <p className="mt-6 max-w-xl text-base leading-[1.85] font-light text-ink/75">
             Terasa před domečkem je místo na ranní kávu, pomalou snídani
