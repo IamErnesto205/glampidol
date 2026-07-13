@@ -125,6 +125,16 @@ export default function Footer() {
             ))}
           </ul>
         </div>
+        <div className="mx-auto w-full max-w-[1280px] px-6 pb-6 text-center lg:px-8">
+          <a
+            href="https://bnbmind.cz/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[0.78rem] font-light text-amber-soft transition-colors duration-300 hover:text-cream"
+          >
+            Vyrobila agentura bnbmind.cz
+          </a>
+        </div>
       </div>
     </footer>
   );
