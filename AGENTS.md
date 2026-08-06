@@ -54,8 +54,11 @@ Web **nemá vlastní rezervační formulář**. Sekce `ReservationSection.tsx` o
 
 Fotky v `public/images/trips/` jsou z Wikimedia Commons pod CC BY / CC BY-SA. **Uvedení autora v patičce je podmínka jejich použití** — nemazat ho, dokud tam ty fotky jsou. Při výměně za vlastní fotku smažte u dané položky `credit` v `lib/content.ts` a řádek v patičce zmizí sám.
 
+## Recenze
+
+Jsou to **skutečné recenze hostů** převzaté z profilu na e-chalupy.cz (`REVIEWS_URL` v `lib/site.ts`), vybraných 8 z 24. Cizí slova neupravovat nad rámec zjevných překlepů. Anglická a německá verze jsou překlady originálů — proto je u nich v UI poznámka `translatedNote`, v češtině je prázdná. Při doplnění nové recenze zkontrolovat, že souhlasí `ratingSummary` (dnes 5,0 z 24 hodnocení).
+
 ## Dočasné placeholdery (čekají na reálná data)
 
-- Recenze jsou ukázkové (označené v UI)
 - Odkazy na sociální sítě vedou na `#`
 - Web neuvádí obchodní podmínky ani GDPR — obojí odstraněno na přání klienta. Až přibude analytika nebo formulář, bude potřeba je vrátit.

@@ -206,12 +206,50 @@ export const de: Dictionary = {
   reviews: {
     eyebrow: "Referenzen",
     headline: "Wie man hier abschaltet",
-    author: "Gast von Glampidol",
-    note: "Beispielreferenzen — sie werden durch Bewertungen echter Gäste ersetzt.",
+    ratingSummary: "5,0 von 5 — 24 Gästebewertungen",
+    ratingCta: "Alle Bewertungen auf e-chalupy.cz",
+    translatedNote: "Die Bewertungen sind aus dem tschechischen Original übersetzt.",
     items: [
-      "Ein wunderschöner Ort, absolute Ruhe und die Sauna als Sahnehäubchen. Genau das Wochenende, das wir gebraucht haben.",
-      "Alles sauber, neu und durchdacht. Am meisten haben wir die Aussicht und die Sauna am Abend genossen.",
-      "Das Häuschen ist ein kleines Wunder. Man fühlt sich mitten in der Natur, aber mit jedem Komfort.",
+      {
+        text: "Wenn es ginge, würden wir 200 % geben! Alles war perfekt — ein wunderschöner Ort, Ruhe, Abgeschiedenheit, alles sauber und bis ins letzte Detail durchdacht. Die Gastgeber sind nett und fürsorglich, die Ausflugsmöglichkeiten großartig. Abende am Grill auf der Terrasse — wir haben uns unglaublich erholt. Wir kommen bestimmt wieder, danke!",
+        author: "Pavla",
+        when: "als Paar · Frühling 2025",
+      },
+      {
+        text: "Ein absolut genialer Ort für alle, die abschalten und es sich gut gehen lassen wollen. Alles bestens ausgestattet — Küchenzeile, Außengrill, Sanitärbereich. Als Bonus die abendliche Sauna, unbezahlbar. Die Gastgeberin ist sehr freundlich und kümmert sich wirklich darum, dass alles passt. Es gibt nichts zu bemängeln, wir empfehlen diesen Ort allen weiter. Danke!",
+        author: "Lukáš",
+        when: "als Paar · Herbst 2025",
+      },
+      {
+        text: "Eine absolut traumhafte Unterkunft, sowohl die Lage als auch die Ausstattung. Wir haben es zu zweit genossen, mit Kindern wäre es aber genauso schön. Wir kommen bestimmt wieder. Herrliche Aussicht, schöne Ausflüge in der Umgebung, tolle Sauna.",
+        author: "Iveta",
+        when: "als Paar · Frühling 2026",
+      },
+      {
+        text: "Ein wunderbares Häuschen an einem ruhigen Ort mit großartiger Aussicht. Die Kommunikation mit den Gastgebern war sehr angenehm, Probleme wurden sofort gelöst. Das Häuschen ist gemütlich, mit Liebe zum Detail eingerichtet, und es fehlt an nichts. Danke und weiterempfohlen.",
+        author: "Veronika",
+        when: "mit Familie · Herbst 2025",
+      },
+      {
+        text: "Wunderschöne, ruhige Umgebung — morgens Schnee und Rehe, abends der Sternenhimmel. Das Objekt ist modern und funktional. Wir freuen uns aufs nächste Mal, wenn die Bäume blühen.",
+        author: "Gast",
+        when: "als Paar · Winter 2024",
+      },
+      {
+        text: "Sehr sympathische und hilfsbereite Gastgeber, unkomplizierte Kommunikation. Herrliche Umgebung für einen ruhigen Familienurlaub mit Ausflugsmöglichkeiten. Das Häuschen eignet sich für höchstens zwei Erwachsene und ein Kind, ist bis ins Detail durchdacht und überdurchschnittlich ausgestattet. Der Urlaub hat unsere Erwartungen übertroffen.",
+        author: "Gast",
+        when: "mit Familie · Sommer 2025",
+      },
+      {
+        text: "Der Aufenthalt war absolut perfekt. Wir haben uns hier so wohl gefühlt wie lange nirgendwo sonst. Die Atmosphäre ist wunderschön, die Gastgeber unglaublich nett, die Ausstattung erstklassig. Wir empfehlen es von ganzem Herzen und hoffen, wiederzukommen.",
+        author: "Familie Ježek",
+        when: "mit Familie · Herbst 2025",
+      },
+      {
+        text: "Sehr hilfsbereite Gastgeber, Unterkunft und Umgebung waren gründlich gereinigt. Die Lage bietet maximale Privatsphäre. Ich kann es uneingeschränkt empfehlen.",
+        author: "Familie Kesoš",
+        when: "als Paar · Sommer 2025",
+      },
     ],
   },
 

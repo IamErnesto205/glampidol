@@ -206,12 +206,50 @@ export const en: Dictionary = {
   reviews: {
     eyebrow: "Reviews",
     headline: "How people switch off here",
-    author: "Glampidol guest",
-    note: "Sample reviews — these will be replaced with reviews from real guests.",
+    ratingSummary: "5.0 out of 5 — 24 guest reviews",
+    ratingCta: "All reviews on e-chalupy.cz",
+    translatedNote: "Reviews are translated from the Czech originals.",
     items: [
-      "A beautiful spot, absolute quiet, and the sauna as the cherry on top. Exactly the weekend we needed.",
-      "Everything clean, new and well thought through. The views and the evening sauna were the highlight.",
-      "The cabin is a small miracle. You feel like you're out in nature, but with every comfort.",
+      {
+        text: "If we could, we'd give it 200 %! Everything was perfect — a beautiful place, quiet, seclusion, everything clean and finished down to the last detail. The owners are kind and attentive, and there's plenty to do nearby. Evenings by the grill on the terrace; we rested like never before. We'll definitely be back, thank you!",
+        author: "Pavla",
+        when: "couple · spring 2025",
+      },
+      {
+        text: "An absolutely brilliant place for people who want to switch off and enjoy themselves. Everything is superbly equipped — kitchenette, outdoor grill, bathroom. The evening sauna is a priceless bonus. Our host is lovely and really makes sure everything is just right. Nothing to fault; we'll recommend this place to everyone we know. Thank you!",
+        author: "Lukáš",
+        when: "couple · autumn 2025",
+      },
+      {
+        text: "Absolutely divine, both the location and the facilities. We enjoyed it as a couple, but it would be lovely with children too. We'll definitely be back. Beautiful views, great trips nearby, wonderful sauna.",
+        author: "Iveta",
+        when: "couple · spring 2026",
+      },
+      {
+        text: "A wonderful cabin in a quiet spot with a stunning view. Communication with the owners was very pleasant, and any issue was sorted out immediately. The cabin is cosy, lovingly finished, and nothing is missing. Thank you, and we recommend it.",
+        author: "Veronika",
+        when: "family · autumn 2025",
+      },
+      {
+        text: "Beautiful, peaceful surroundings — snow and deer in the morning, a starry sky in the evening. The place is modern and practical. We're looking forward to coming back when the trees are in blossom.",
+        author: "Guest",
+        when: "couple · winter 2024",
+      },
+      {
+        text: "Very likeable and helpful owners, effortless communication. Beautiful surroundings for a quiet family holiday with plenty of trips nearby. The cabin suits two adults and a child at most; it's thought through in every detail and exceptionally well equipped. The holiday exceeded our expectations.",
+        author: "Guest",
+        when: "family · summer 2025",
+      },
+      {
+        text: "The stay was absolutely perfect. We felt better here than we have anywhere in a long time. The atmosphere is lovely, the owners incredibly kind, the facilities excellent. We recommend it wholeheartedly and hope to come back.",
+        author: "The Ježeks",
+        when: "family · autumn 2025",
+      },
+      {
+        text: "Very helpful owners; the cabin and the grounds were thoroughly clean. The location gives you complete privacy. I can recommend it wholeheartedly.",
+        author: "The Kesoš family",
+        when: "couple · summer 2025",
+      },
     ],
   },
 

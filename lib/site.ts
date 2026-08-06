@@ -26,6 +26,10 @@ export const RESERVATION_HASH = "#rezervace";
 export const BOOKING_URL =
   "https://www.e-chalupy.cz/ubytovani-lipa-glampidol-o5238";
 
+/** Veřejný profil s hodnocením hostů — odkaz pod recenzemi. */
+export const REVIEWS_URL =
+  "https://www.e-chalupy.cz/recenze/ubytovani-lipa-glampidol-5238";
+
 export const CONTACT = {
   phone: "+420 736 246 038",
   email: "glampidolcz@gmail.com",

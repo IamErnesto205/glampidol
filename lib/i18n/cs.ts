@@ -212,12 +212,51 @@ export const cs = {
   reviews: {
     eyebrow: "Reference",
     headline: "Jak se u nás vypíná",
-    author: "Host Glampidolu",
-    note: "Ukázkové reference — budou nahrazeny recenzemi skutečných hostů.",
+    ratingSummary: "5,0 z 5 — 24 hodnocení hostů",
+    ratingCta: "Všechny recenze na e-chalupy.cz",
+    /** Prázdné v češtině — recenze jsou v originále. */
+    translatedNote: "",
     items: [
-      "Krásné místo, absolutní klid a sauna jako třešnička. Přesně víkend, který jsme potřebovali.",
-      "Všechno čisté, nové a promyšlené. Nejvíc jsme si užili výhledy a večerní saunu.",
-      "Domeček je malý zázrak. Člověk si připadá jako v přírodě, ale s veškerým pohodlím.",
+      {
+        text: "Pokud by to šlo, hodnotili bychom na 200 %! Vše bylo perfektní, nádherné místo, klid, samota, vše čisté a doladěné do posledního detailu. Majitelé milí a starostliví, skvělé možnosti na výlety. Večery u grilu na terase, neskutečně jsme si odpočinuli. Určitě se vrátíme, děkujeme!",
+        author: "Pavla",
+        when: "v páru · jaro 2025",
+      },
+      {
+        text: "Absolutně geniální místo pro lidi, kteří chtějí vypnout a užít si pohodu. Vše skvěle vybavené, kuchyňka, venkovní gril, sociální zařízení. Jako bonus večerní sauna k nezaplacení. Paní je moc příjemná a opravdu se stará aby bylo všechno v pořádku, není co vytknout, tohle místo doporučíme úplně všem z našeho okolí. Děkujeme!",
+        author: "Lukáš",
+        when: "v páru · podzim 2025",
+      },
+      {
+        text: "Naprosto boží ubytování, jak poloha, tak zázemí. Užili jsme si to ve dvou, ale bylo by to prima i s dětmi. Určitě se vrátíme. Krásný výhled, příjemné výlety do okolí, skvělá sauna.",
+        author: "Iveta",
+        when: "v páru · jaro 2026",
+      },
+      {
+        text: "Úžasný domeček na klidném místě s parádním výhledem. Komunikace s majiteli velmi příjemná, v případě problému ihned vyřešeno. Domeček je útulný, do detailů vymazlený a nic zde nechybí. Děkujeme a doporučujeme.",
+        author: "Veronika",
+        when: "s rodinou · podzim 2025",
+      },
+      {
+        text: "Krásné klidné prostředí, ráno sníh a srnky, večer hvězdná obloha. Objekt je moderní a funkční. Těšíme se na příště, až budou stromy v květu.",
+        author: "Host",
+        when: "v páru · zima 2024",
+      },
+      {
+        text: "Velmi sympatičtí a ochotní majitelé, bezproblémová komunikace. Nádherné prostředí pro klidnou rodinnou dovolenou s možností výletů po okolí. Chatka vhodná max pro dva dospělé a dítě, do detailu promyšlená a nadstandardně vybavená. Dovolená předčila naše očekávání.",
+        author: "Host",
+        when: "s rodinou · léto 2025",
+      },
+      {
+        text: "Ubytování bylo naprosto dokonalé. Cítili jsme se zde tak krásně, jako dlouho nikde jinde. Je tu velmi krásná atmosféra, majitelé strašně příjemní, vybavení parádní. Doporučujeme všema deseti a doufáme, že se sem zase vrátíme.",
+        author: "Ježovi",
+        when: "s rodinou · podzim 2025",
+      },
+      {
+        text: "Moc ochotní majitelé, ubytování i okolí bylo důkladně uklizeno. Umístění chaty poskytuje maximální soukromí. Mohu doporučit všemi deseti.",
+        author: "Kesoši",
+        when: "v páru · léto 2025",
+      },
     ],
   },
 
