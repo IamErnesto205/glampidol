@@ -4,9 +4,10 @@ import { useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import Eyebrow from "./Eyebrow";
 import Reveal from "./Reveal";
-import { FAQ_ITEMS } from "@/lib/content";
+import type { Dictionary } from "@/lib/i18n";
 
-export default function FAQSection() {
+export default function FAQSection({ dict }: { dict: Dictionary }) {
+  const FAQ_ITEMS = dict.faq.items;
   const [openIndex, setOpenIndex] = useState<number | null>(0);
   const reduceMotion = useReducedMotion();
 
@@ -14,9 +15,9 @@ export default function FAQSection() {
     <section id="faq" className="bg-cream">
       <div className="mx-auto w-full max-w-3xl px-6 py-24 lg:px-8 lg:py-32">
         <Reveal>
-          <Eyebrow>Časté dotazy</Eyebrow>
+          <Eyebrow>{dict.faq.eyebrow}</Eyebrow>
           <h2 className="mt-6 font-display text-3xl leading-[1.15] font-semibold tracking-tight text-ink sm:text-4xl">
-            Na co se ptáte nejčastěji
+            {dict.faq.headline}
           </h2>
         </Reveal>
 

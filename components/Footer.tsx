@@ -1,5 +1,16 @@
 import Image from "next/image";
-import { CONTACT, NAV_LINKS, SITE_NAME } from "@/lib/site";
+import { TRIP_META } from "@/lib/content";
+import { CONTACT, NAV_ITEMS, SITE_NAME } from "@/lib/site";
+import { localePath, type Dictionary, type Locale } from "@/lib/i18n";
+
+/**
+ * Uvedení autorů fotek u tipů na výlety — podmínka licence Wikimedia
+ * Commons. Až fotky nahradíte vlastními, smažte u nich `credit`
+ * v lib/content.ts a řádek z patičky sám zmizí.
+ */
+const PHOTO_CREDITS = TRIP_META.flatMap((trip) =>
+  trip.credit ? [trip.credit] : [],
+);
 // Stejná fotka jako v Hero
 import heroImage from "@/public/images/hero.png";
 
@@ -8,12 +19,15 @@ const SOCIALS = [
   { label: "Facebook", href: "#" },
 ];
 
-const LEGAL = [
-  { label: "Obchodní podmínky", href: "#" },
-  { label: "Ochrana osobních údajů", href: "#" },
-];
+export default function Footer({
+  dict,
+  locale,
+}: {
+  dict: Dictionary;
+  locale: Locale;
+}) {
+  const home = localePath(locale);
 
-export default function Footer() {
   return (
     <footer className="relative overflow-hidden border-t border-cream/10 bg-bark">
       {/* Fotka na pozadí (stejná jako v Hero) + tmavý překryv pro čitelnost */}
@@ -36,24 +50,23 @@ export default function Footer() {
             {SITE_NAME}
           </p>
           <p className="mt-5 max-w-xs text-[0.9rem] leading-[1.8] font-light text-cream/60">
-            Soukromý tiny house se saunou v trnkovém sadu u Vizovických vrchů.
-            Místo, kde se vypíná město a zapíná ticho.
+            {dict.footer.tagline}
           </p>
         </div>
 
         {/* Navigace */}
-        <nav aria-label="Patička — navigace">
+        <nav aria-label={dict.footer.navTitle}>
           <h3 className="font-display text-[0.7rem] font-semibold tracking-[0.2em] text-cream/45 uppercase">
-            Navigace
+            {dict.footer.navTitle}
           </h3>
           <ul className="mt-5 space-y-2.5">
-            {NAV_LINKS.map((link) => (
-              <li key={link.href}>
+            {NAV_ITEMS.map((item) => (
+              <li key={item.hash}>
                 <a
-                  href={link.href}
+                  href={`${home}${item.hash}`}
                   className="text-[0.9rem] font-light text-cream/70 transition-colors duration-300 hover:text-amber-soft"
                 >
-                  {link.label}
+                  {dict.nav[item.key]}
                 </a>
               </li>
             ))}
@@ -63,7 +76,7 @@ export default function Footer() {
         {/* Kontakt */}
         <div>
           <h3 className="font-display text-[0.7rem] font-semibold tracking-[0.2em] text-cream/45 uppercase">
-            Kontakt
+            {dict.footer.contactTitle}
           </h3>
           <ul className="mt-5 space-y-2.5 text-[0.9rem] font-light text-cream/70">
             <li>
@@ -82,14 +95,14 @@ export default function Footer() {
                 {CONTACT.email}
               </a>
             </li>
-            <li>{CONTACT.location}</li>
+            <li>{dict.reservation.locationValue}</li>
           </ul>
         </div>
 
         {/* Sociální sítě */}
         <div>
           <h3 className="font-display text-[0.7rem] font-semibold tracking-[0.2em] text-cream/45 uppercase">
-            Sledujte nás
+            {dict.footer.socialTitle}
           </h3>
           <ul className="mt-5 space-y-2.5">
             {SOCIALS.map((social) => (
@@ -108,22 +121,22 @@ export default function Footer() {
 
       {/* Spodní lišta */}
       <div className="relative z-10 border-t border-cream/10">
-        <div className="mx-auto flex w-full max-w-[1280px] flex-col items-start justify-between gap-4 px-6 py-6 sm:flex-row sm:items-center lg:px-8">
+        <div className="mx-auto w-full max-w-[1280px] px-6 py-6 lg:px-8">
           <p className="text-[0.78rem] font-light text-cream/40">
-            © {new Date().getFullYear()} {SITE_NAME}. Glamping v trnkovém sadu.
+            © {new Date().getFullYear()} {SITE_NAME}. {dict.footer.copyright}
           </p>
-          <ul className="flex flex-wrap gap-x-6 gap-y-2">
-            {LEGAL.map((link) => (
-              <li key={link.label}>
-                <a
-                  href={link.href}
-                  className="text-[0.78rem] font-light text-cream/40 transition-colors duration-300 hover:text-cream/70"
-                >
-                  {link.label}
-                </a>
-              </li>
-            ))}
-          </ul>
+          {PHOTO_CREDITS.length > 0 && (
+            <p className="mt-2 text-[0.72rem] leading-relaxed font-light text-cream/25">
+              {dict.footer.photoCredits}{" "}
+              {PHOTO_CREDITS.map((credit, i) => (
+                <span key={`${credit.author}-${i}`}>
+                  {credit.author} ({credit.license})
+                  {i < PHOTO_CREDITS.length - 1 ? ", " : ""}
+                </span>
+              ))}{" "}
+              — Wikimedia Commons.
+            </p>
+          )}
         </div>
         <div className="mx-auto w-full max-w-[1280px] px-6 pb-6 text-center lg:px-8">
           <a
@@ -132,7 +145,7 @@ export default function Footer() {
             rel="noopener noreferrer"
             className="text-[0.78rem] font-light text-amber-soft transition-colors duration-300 hover:text-cream"
           >
-            Vyrobila agentura bnbmind.cz
+            {dict.footer.credit}
           </a>
         </div>
       </div>

@@ -2,21 +2,20 @@
 
 import Image from "next/image";
 import { motion, useReducedMotion, type Variants } from "framer-motion";
-import { RESERVATION_HREF } from "@/lib/site";
+import { RESERVATION_HASH } from "@/lib/site";
+import { localePath, type Dictionary, type Locale } from "@/lib/i18n";
 // Hero fotka — pro výměnu stačí nahradit soubor public/images/hero.png
 import heroImage from "@/public/images/hero.png";
 
-const BENEFITS = [
-  "Až pro 4 osoby",
-  "Sauna v ceně",
-  "Terasa",
-  "Gril",
-  "Wi-Fi",
-  "Parkování u domečku",
-];
-
-export default function Hero() {
+export default function Hero({
+  dict,
+  locale,
+}: {
+  dict: Dictionary;
+  locale: Locale;
+}) {
   const reduceMotion = useReducedMotion();
+  const BENEFITS = dict.hero.badges;
 
   const container: Variants = {
     hidden: {},
@@ -45,7 +44,7 @@ export default function Hero() {
       >
         <Image
           src={heroImage}
-          alt="Tiny house Glampidol se saunou v trnkovém sadu při západu slunce"
+          alt={dict.hero.imageAlt}
           fill
           priority
           placeholder="blur"
@@ -73,7 +72,7 @@ export default function Hero() {
             className="inline-flex items-center gap-2.5 rounded-full border border-cream/25 bg-bark/40 px-4 py-2 font-display text-[0.72rem] font-medium tracking-[0.18em] text-cream/90 uppercase backdrop-blur-sm"
           >
             <span className="h-1.5 w-1.5 rounded-full bg-amber-soft" />
-            Glamping v trnkovém sadu u Vizovických vrchů
+            {dict.hero.badge}
           </motion.p>
 
           {/* Headline */}
@@ -81,10 +80,13 @@ export default function Hero() {
             variants={item}
             className="mt-7 font-display text-[2.6rem] leading-[1.08] font-semibold tracking-tight text-cream sm:text-6xl sm:leading-[1.06] lg:text-7xl"
           >
-            Vypněte město.
+            {dict.hero.headlineTop}
             <br />
             <span className="text-amber-soft">
-              Zapněte <span className="whitespace-nowrap">ticho sadu.</span>
+              {dict.hero.headlineAccent}{" "}
+              <span className="whitespace-nowrap">
+                {dict.hero.headlineAccentNoWrap}
+              </span>
             </span>
           </motion.h1>
 
@@ -93,8 +95,7 @@ export default function Hero() {
             variants={item}
             className="mt-6 max-w-xl text-base leading-relaxed font-light text-cream/85 sm:text-lg"
           >
-            Soukromý tiny house s výhledem do kopců, finskou saunou v ceně
-            a&nbsp;atmosférou, kvůli které se vám nebude chtít zpátky.
+            {dict.hero.subheadline}
           </motion.p>
 
           {/* CTA */}
@@ -103,13 +104,13 @@ export default function Hero() {
             className="mt-9 flex flex-col gap-4 sm:flex-row sm:items-center"
           >
             <motion.a
-              href={RESERVATION_HREF}
+              href={`${localePath(locale)}${RESERVATION_HASH}`}
               whileHover={reduceMotion ? undefined : { scale: 1.03, y: -2 }}
               whileTap={reduceMotion ? undefined : { scale: 0.97 }}
               transition={{ type: "spring", stiffness: 400, damping: 18 }}
               className="inline-flex items-center justify-center gap-2.5 rounded-full bg-olive px-8 py-4 font-display text-sm font-semibold tracking-[0.1em] text-cream uppercase shadow-lg shadow-bark/40 transition-colors duration-300 hover:bg-olive-deep"
             >
-              Ověřit volný termín
+              {dict.hero.ctaPrimary}
               <span aria-hidden>→</span>
             </motion.a>
             <motion.a
@@ -119,7 +120,7 @@ export default function Hero() {
               transition={{ type: "spring", stiffness: 400, damping: 18 }}
               className="inline-flex items-center justify-center rounded-full border border-cream/35 bg-cream/5 px-8 py-4 font-display text-sm font-semibold tracking-[0.1em] text-cream uppercase backdrop-blur-sm transition-colors duration-300 hover:border-cream/60 hover:bg-cream/15"
             >
-              Prohlédnout domeček
+              {dict.hero.ctaSecondary}
             </motion.a>
           </motion.div>
 
@@ -145,14 +146,14 @@ export default function Hero() {
       {/* Scroll indikátor */}
       <motion.a
         href="#domecek"
-        aria-label="Posunout na další sekci"
+        aria-label={dict.hero.scrollAria}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.6, duration: 0.8 }}
         className="absolute bottom-7 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-2.5 sm:flex"
       >
         <span className="font-display text-[0.65rem] tracking-[0.28em] text-cream/60 uppercase">
-          Objevte víc
+          {dict.hero.scroll}
         </span>
         <span className="flex h-9 w-5.5 items-start justify-center rounded-full border border-cream/35 p-1.5">
           <motion.span

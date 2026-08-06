@@ -1,8 +1,10 @@
 import Reveal from "./Reveal";
 import SeasonBackdrop from "./SeasonBackdrop";
-import { BENEFITS } from "@/lib/content";
+import type { Dictionary } from "@/lib/i18n";
 
-export default function Benefits() {
+export default function Benefits({ dict }: { dict: Dictionary }) {
+  const BENEFITS = dict.benefits;
+
   return (
     <section className="relative overflow-hidden bg-linen">
       <SeasonBackdrop season="jaro" />

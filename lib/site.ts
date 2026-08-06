@@ -1,19 +1,33 @@
 export const SITE_NAME = "Glampidol";
 
-export const NAV_LINKS = [
-  { label: "Domeček", href: "/#domecek" },
-  { label: "Sauna", href: "/#sauna" },
-  { label: "Okolí", href: "/#okoli" },
-  { label: "Galerie", href: "/#galerie" },
-  { label: "Ceník", href: "/#cenik" },
-  { label: "FAQ", href: "/#faq" },
-  { label: "Kontakt", href: "/#kontakt" },
+/** Základ pro absolutní URL v metadatech (OG obrázky, canonical, hreflang). */
+export const SITE_URL = "https://glampidol.cz";
+
+/**
+ * Navigace — kotvy jsou stejné ve všech jazycích, popisky se berou
+ * ze slovníku podle `key` (viz lib/i18n/*.ts, sekce `nav`).
+ */
+export const NAV_ITEMS = [
+  { key: "cabin", hash: "#domecek" },
+  { key: "sauna", hash: "#sauna" },
+  { key: "surroundings", hash: "#okoli" },
+  { key: "gallery", hash: "#galerie" },
+  { key: "pricing", hash: "#cenik" },
+  { key: "faq", hash: "#faq" },
+  { key: "contact", hash: "#kontakt" },
 ] as const;
 
-export const RESERVATION_HREF = "/#rezervace";
+export const RESERVATION_HASH = "#rezervace";
+
+/**
+ * Rezervace probíhají přes inzerát na e-chalupy.cz — web sám žádný
+ * rezervační formulář nemá. Při změně inzerátu stačí přepsat tuto adresu.
+ */
+export const BOOKING_URL =
+  "https://www.e-chalupy.cz/ubytovani-lipa-glampidol-o5238";
 
 export const CONTACT = {
-  phone: "+420 000 000 000",
-  email: "info@glampidol.cz",
+  phone: "+420 736 246 038",
+  email: "glampidolcz@gmail.com",
   location: "Lípa, Zlínský kraj",
 } as const;

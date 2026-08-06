@@ -1,15 +1,17 @@
 import Eyebrow from "./Eyebrow";
 import Reveal from "./Reveal";
-import { REVIEWS } from "@/lib/content";
+import type { Dictionary } from "@/lib/i18n";
 
-export default function ReviewsSection() {
+export default function ReviewsSection({ dict }: { dict: Dictionary }) {
+  const REVIEWS = dict.reviews.items;
+
   return (
     <section className="bg-cream">
       <div className="mx-auto w-full max-w-[1280px] px-6 py-24 lg:px-8 lg:py-32">
         <Reveal className="max-w-2xl">
-          <Eyebrow>Reference</Eyebrow>
+          <Eyebrow>{dict.reviews.eyebrow}</Eyebrow>
           <h2 className="mt-6 font-display text-3xl leading-[1.15] font-semibold tracking-tight text-ink sm:text-4xl">
-            Jak se u nás vypíná
+            {dict.reviews.headline}
           </h2>
         </Reveal>
 
@@ -27,7 +29,7 @@ export default function ReviewsSection() {
                   {review}
                 </p>
                 <footer className="mt-6 border-t border-sand pt-4 font-display text-[0.7rem] font-medium tracking-[0.18em] text-ink/50 uppercase">
-                  Host Glampidolu
+                  {dict.reviews.author}
                 </footer>
               </blockquote>
             </Reveal>
@@ -36,7 +38,7 @@ export default function ReviewsSection() {
 
         <Reveal delay={0.2}>
           <p className="mt-8 text-xs font-light text-ink/40">
-            Ukázkové reference — budou nahrazeny recenzemi skutečných hostů.
+            {dict.reviews.note}
           </p>
         </Reveal>
       </div>
