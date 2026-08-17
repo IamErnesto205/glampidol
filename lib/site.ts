@@ -35,3 +35,11 @@ export const CONTACT = {
   email: "glampidolcz@gmail.com",
   location: "Lípa, Zlínský kraj",
 } as const;
+
+/**
+ * Sociální sítě v patičce. Facebook klient nemá — až nějaký vznikne,
+ * stačí přidat položku a v patičce se vypíše sama.
+ */
+export const SOCIALS = [
+  { label: "Instagram", href: "https://www.instagram.com/glampidol/" },
+] as const;

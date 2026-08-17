@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { TRIP_META } from "@/lib/content";
-import { CONTACT, NAV_ITEMS, SITE_NAME } from "@/lib/site";
+import { CONTACT, NAV_ITEMS, SITE_NAME, SOCIALS } from "@/lib/site";
 import { localePath, type Dictionary, type Locale } from "@/lib/i18n";
 
 /**
@@ -13,11 +13,6 @@ const PHOTO_CREDITS = TRIP_META.flatMap((trip) =>
 );
 // Stejná fotka jako v Hero
 import heroImage from "@/public/images/hero.png";
-
-const SOCIALS = [
-  { label: "Instagram", href: "#" },
-  { label: "Facebook", href: "#" },
-];
 
 export default function Footer({
   dict,
@@ -109,6 +104,8 @@ export default function Footer({
               <li key={social.label}>
                 <a
                   href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-[0.9rem] font-light text-cream/70 transition-colors duration-300 hover:text-amber-soft"
                 >
                   {social.label}
