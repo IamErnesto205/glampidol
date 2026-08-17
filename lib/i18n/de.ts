@@ -21,6 +21,8 @@ export const de: Dictionary = {
     galleryTitle: "Fotogalerie | Glampidol",
     galleryDescription:
       "Die komplette Galerie von Glampidol — Häuschen, finnische Sauna, Innenraum, Terrasse und der Zwetschgengarten am Fuß der Wisowitzer Berge.",
+    ogImageAlt:
+      "Tiny House mit Terrasse und Fasssauna im Zwetschgengarten bei Sonnenuntergang",
   },
 
   nav: {

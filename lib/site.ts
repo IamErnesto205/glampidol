@@ -37,6 +37,18 @@ export const CONTACT = {
 } as const;
 
 /**
+ * Náhled odkazu při sdílení (iMessage, WhatsApp, Messenger, Slack…).
+ * Výřez 1200×630 z hero fotky. Bez tohohle si scrapery vyberou první
+ * velký obrázek v DOM — tedy sezónní pozadí, což vypadá jako fotka větví.
+ * Při výměně hero fotky přegenerovat i tenhle výřez.
+ */
+export const OG_IMAGE = {
+  url: "/images/og.jpg",
+  width: 1200,
+  height: 630,
+} as const;
+
+/**
  * Sociální sítě v patičce. Facebook klient nemá — až nějaký vznikne,
  * stačí přidat položku a v patičce se vypíše sama.
  */

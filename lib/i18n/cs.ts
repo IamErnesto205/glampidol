@@ -27,6 +27,9 @@ export const cs = {
     galleryTitle: "Fotogalerie | Glampidol",
     galleryDescription:
       "Kompletní fotogalerie Glampidolu — domeček, finská sauna, interiér, terasa a trnkový sad u Vizovických vrchů.",
+    /** Popis náhledového obrázku při sdílení odkazu (public/images/og.jpg). */
+    ogImageAlt:
+      "Tiny house s terasou a sudovou saunou v trnkovém sadu při západu slunce",
   },
 
   nav: {

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { notFound } from "next/navigation";
 import { getDictionary, hasLocale, LOCALES } from "@/lib/i18n";
-import { SITE_URL } from "@/lib/site";
+import { OG_IMAGE, SITE_URL } from "@/lib/site";
 import "../globals.css";
 
 const raleway = localFont({
@@ -76,6 +76,13 @@ export async function generateMetadata({
       locale: OG_LOCALES[lang],
       type: "website",
       url: `/${lang}`,
+      images: [{ ...OG_IMAGE, alt: dict.meta.ogImageAlt }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: dict.meta.title,
+      description: dict.meta.description,
+      images: [OG_IMAGE.url],
     },
   };
 }

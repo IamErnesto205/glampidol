@@ -7,6 +7,7 @@ import Eyebrow from "@/components/Eyebrow";
 import Reveal from "@/components/Reveal";
 import { getDictionary, hasLocale, localePath, LOCALES } from "@/lib/i18n";
 import { IMAGES, type ImageKey } from "@/lib/images";
+import { OG_IMAGE } from "@/lib/site";
 
 export function generateStaticParams() {
   return LOCALES.map((lang) => ({ lang }));
@@ -28,6 +29,20 @@ export async function generateMetadata({
       languages: Object.fromEntries(
         LOCALES.map((locale) => [locale, `/${locale}/galerie`]),
       ),
+    },
+    // Bez vlastního openGraph by sdílení galerie ukazovalo titulek úvodní stránky.
+    openGraph: {
+      title: dict.meta.galleryTitle,
+      description: dict.meta.galleryDescription,
+      type: "website",
+      url: `/${lang}/galerie`,
+      images: [{ ...OG_IMAGE, alt: dict.meta.ogImageAlt }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: dict.meta.galleryTitle,
+      description: dict.meta.galleryDescription,
+      images: [OG_IMAGE.url],
     },
   };
 }

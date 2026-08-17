@@ -21,6 +21,8 @@ export const en: Dictionary = {
     galleryTitle: "Photo gallery | Glampidol",
     galleryDescription:
       "The complete Glampidol gallery — the cabin, Finnish sauna, interior, terrace and the plum orchard below the Vizovice Hills.",
+    ogImageAlt:
+      "Tiny house with a terrace and barrel sauna in a plum orchard at sunset",
   },
 
   nav: {
