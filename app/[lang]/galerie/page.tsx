@@ -5,7 +5,13 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Eyebrow from "@/components/Eyebrow";
 import Reveal from "@/components/Reveal";
-import { getDictionary, hasLocale, localePath, LOCALES } from "@/lib/i18n";
+import {
+  getDictionary,
+  hasLocale,
+  languageAlternates,
+  localePath,
+  LOCALES,
+} from "@/lib/i18n";
 import { IMAGES, type ImageKey } from "@/lib/images";
 import { OG_IMAGE } from "@/lib/site";
 
@@ -26,9 +32,7 @@ export async function generateMetadata({
     description: dict.meta.galleryDescription,
     alternates: {
       canonical: `/${lang}/galerie`,
-      languages: Object.fromEntries(
-        LOCALES.map((locale) => [locale, `/${locale}/galerie`]),
-      ),
+      languages: languageAlternates("galerie"),
     },
     // Bez vlastního openGraph by sdílení galerie ukazovalo titulek úvodní stránky.
     openGraph: {

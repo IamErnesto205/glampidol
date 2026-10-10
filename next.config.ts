@@ -6,11 +6,12 @@ const nextConfig: NextConfig = {
   /**
    * Web běží pod jazykovou předponou (/cs, /en, /de). Kořen a staré
    * adresy bez předpony vedou na češtinu, aby odkazy zvenčí nepadaly
-   * na 404 — čeština je hlavní trh.
+   * na 404 — čeština je hlavní trh. Trvalé (308), aby to Google
+   * bral stejně jako canonical na /cs a nevedl dvě adresy úvodní stránky.
    */
   async redirects() {
     return [
-      { source: "/", destination: "/cs", permanent: false },
+      { source: "/", destination: "/cs", permanent: true },
       { source: "/galerie", destination: "/cs/galerie", permanent: true },
     ];
   },

@@ -37,6 +37,17 @@ export const CONTACT = {
 } as const;
 
 /**
+ * Adresa pro strukturovaná data (components/StructuredData.tsx), ze kterých
+ * Google skládá kartu podniku. Ulici a PSČ doplnit, až je klient pošle —
+ * musí sedět s Firemním profilem na Googlu.
+ */
+export const ADDRESS = {
+  locality: "Lípa",
+  region: "Zlínský kraj",
+  country: "CZ",
+} as const;
+
+/**
  * Náhled odkazu při sdílení (iMessage, WhatsApp, Messenger, Slack…).
  * Výřez 1200×630 z hero fotky. Bez tohohle si scrapery vyberou první
  * velký obrázek v DOM — tedy sezónní pozadí, což vypadá jako fotka větví.

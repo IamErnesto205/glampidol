@@ -1,7 +1,12 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { notFound } from "next/navigation";
-import { getDictionary, hasLocale, LOCALES } from "@/lib/i18n";
+import {
+  getDictionary,
+  hasLocale,
+  languageAlternates,
+  LOCALES,
+} from "@/lib/i18n";
 import { OG_IMAGE, SITE_URL } from "@/lib/site";
 import "../globals.css";
 
@@ -66,9 +71,7 @@ export async function generateMetadata({
     alternates: {
       canonical: `/${lang}`,
       // hreflang — ať Google nepovažuje jazyky za duplicitní obsah
-      languages: Object.fromEntries(
-        LOCALES.map((locale) => [locale, `/${locale}`]),
-      ),
+      languages: languageAlternates(),
     },
     openGraph: {
       title: dict.meta.title,

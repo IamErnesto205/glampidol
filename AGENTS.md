@@ -44,7 +44,9 @@ Zakázané generické fráze: „nezapomenutelný zážitek“, „oáza klidu�
 - **Odkazy na weby výletů, fotky výletů, licenční kredity**: `lib/content.ts`
 - **Kotvy navigace, kontakty, název, URL inzerátu**: `lib/site.ts`
 - **Barvy a fonty**: `app/globals.css` + `app/[lang]/layout.tsx`
-- **SEO metadata a hreflang**: `app/[lang]/layout.tsx`
+- **SEO metadata a hreflang**: `app/[lang]/layout.tsx` (hreflang přes `languageAlternates()` v `lib/i18n/index.ts`)
+- **Sitemapa a robots.txt**: `app/sitemap.ts` (novou stránku přidat do `PAGES`), `app/robots.ts`
+- **Strukturovaná data pro Google (JSON-LD)**: `components/StructuredData.tsx`, adresa v `ADDRESS` v `lib/site.ts`
 
 ## Rezervace
 

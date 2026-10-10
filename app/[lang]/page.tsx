@@ -14,6 +14,7 @@ import PricingSection from "@/components/PricingSection";
 import FAQSection from "@/components/FAQSection";
 import ReservationSection from "@/components/ReservationSection";
 import Footer from "@/components/Footer";
+import StructuredData from "@/components/StructuredData";
 import { getDictionary, hasLocale } from "@/lib/i18n";
 
 export default async function Home({ params }: PageProps<"/[lang]">) {
@@ -24,6 +25,7 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
 
   return (
     <>
+      <StructuredData dict={dict} locale={lang} />
       <Header dict={dict} locale={lang} />
       <main className="flex-1">
         <Hero dict={dict} locale={lang} />
